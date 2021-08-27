@@ -1,7 +1,8 @@
 version: v1.1.0
 steps:
 # Build target images
-- build: -t {{.Run.Registry}}/{{.Run.TaskName}}:{{.Run.ID}} -f Dockerfile .
+- build: -t {{.Run.Registry}}/{{.Run.TaskName}}:{{.Run.ID}}_{{.Run.Commit}} -f Dockerfile .
 # Push images
 - push:
+  - {{.Run.Registry}}/{{.Run.TaskName}}
   - {{.Run.Registry}}/{{.Run.TaskName}}:{{.Run.ID}}_{{.Run.Commit}}
