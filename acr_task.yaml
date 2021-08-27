@@ -4,4 +4,4 @@ steps:
 - build: -t {{.Run.Registry}}/{{.Run.TaskName}}:{{.Run.ID}} -f Dockerfile .
 # Push images
 - push:
-  - {{.Run.Registry}}/{{.Run.TaskName}}:{{.Run.ID}}
+  - {{.Run.Registry}}/{{.Run.TaskName}}:{{.Run.ID}}_{{.Run.Commit}}
